@@ -4,6 +4,7 @@
 DataCheck <- function(x, y,
                       n_models,
                       h_grid, t_grid, u_grid,
+                      initial_estimator,
                       tolerance,
                       max_iter,
                       neighborhood_search,
@@ -45,8 +46,8 @@ DataCheck <- function(x, y,
   if(!is.null(h_grid)){
     if (!inherits(h_grid, c("numeric", "integer"))) {
       stop("h_grid should be numeric or an integer vector.")
-    } else if (any(!(h_grid == floor(h_grid)), h_grid < 1, h_grid >= nrow(x))) {
-      stop("h_grid should be a positive integer less than the sample size.")
+    } else if (any(!(h_grid == floor(h_grid)), h_grid < 1, h_grid > nrow(x))) {
+      stop("h_grid should be a positive integer no larger than the sample size.")
     }
   }
   
@@ -67,6 +68,10 @@ DataCheck <- function(x, y,
       stop("u_grid should be a positive integer less than the number of models.")
     }
   }
+  
+  # Check input for initial estimator 
+  if(!(initial_estimator %in% c("srlars", "robStepSplitReg")))
+    stop("initial_estimator should be one of \"srlars\" or \"robStepSplitReg\".")
   
   # Checking input for the tolerance parameter
   if(!is.null(tolerance))
@@ -104,11 +109,13 @@ DataCheck <- function(x, y,
 DataCheckCV <- function(x, y,
                         n_models,
                         h_grid, t_grid, u_grid,
+                        initial_estimator,
                         tolerance,
                         max_iter,
                         neighborhood_search,
                         neighborhood_search_tolerance,
                         n_folds,
+                        cv_criterion,
                         alpha,
                         gamma, 
                         n_threads){
@@ -149,8 +156,8 @@ DataCheckCV <- function(x, y,
   if(!is.null(h_grid)){
     if (!inherits(h_grid, c("numeric", "integer"))) {
       stop("h_grid should be numeric or an integer vector.")
-    } else if (any(!(h_grid == floor(h_grid)), h_grid < 1, h_grid >= nrow(x))) {
-      stop("h_grid should be a positive integer less than the sample size.")
+    } else if (any(!(h_grid == floor(h_grid)), h_grid < 1, h_grid > nrow(x))) {
+      stop("h_grid should be a positive integer no larger than the sample size.")
     }
   }
   
@@ -171,6 +178,10 @@ DataCheckCV <- function(x, y,
       stop("u_grid should be a positive integer less than the number of models.")
     }
   }
+  
+  # Check input for initial estimator 
+  if(!(initial_estimator %in% c("srlars", "robStepSplitReg")))
+    stop("initial_estimator should be one of \"srlars\" or \"robStepSplitReg\".")
   
   # Checking input for the tolerance parameter
   if(!is.null(tolerance))
@@ -207,6 +218,10 @@ DataCheckCV <- function(x, y,
   } else if(any(!n_folds == floor(n_folds), n_folds <= 0)) {
     stop("n_folds should be a positive integer")
   }
+  
+  # Check CV criterion parameter
+  if(!(cv_criterion %in% c("tau", "trimmed")))
+    stop("cv_criterion should be one of \"tau\" or \"trimmed\".")
   
   # Check alpha value
   if(!inherits(alpha, "numeric")) {
