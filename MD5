@@ -1,6 +1,6 @@
-8feb0a60654fc0ee1346f45da6dd4f28 *DESCRIPTION
+73fa118c9ce476f7862aeb7e4b7591cf *DESCRIPTION
 9a5c57e31f660eeb68582616e555eabf *NAMESPACE
-228c903c887148fbaf68e8fa1a30dcad *NEWS
+a14f911c722477cc40dec7e32831e31e *NEWS
 4e807f92304585f27063788aee0f919c *R/Coefficients.R
 fa77c794f46fd5b51df1d64ef3e2e539 *R/DataCheck.R
 defe0c98a200ee2ce305c075516dd014 *R/Predictions.R
@@ -9,9 +9,9 @@ defe0c98a200ee2ce305c075516dd014 *R/Predictions.R
 7c20cd0b074ab38d686b67bf240a6f45 *R/ReplicateRCPPFolds.R
 10bc3d31e53fd6c869159aa24bd015e1 *R/autoconfig.R.in
 b0138e546cd5a7f318b15774c9317c03 *R/autoconfig.win.R.in
-400bcce5f89b107407a4a3580af3e809 *R/cv.RMSS.R
+4591ba070ee95bd1e57e7d9c061c0594 *R/cv.RMSS.R
 3c04faaebea612fe440b81c8567c6af7 *R/trimmed_samples.R
-678c3b86f3194820c703324749139008 *README.md
+4e78bae058f7f9c9f1cc4acd6f8cf297 *README.md
 ccdbb882c645f67f951535d26054e50e *cleanup
 ffba88da2ca934328952de63a145b618 *configure
 8ccf5d2f0e5b750d6ebd3bcd43157f5f *configure.ac
