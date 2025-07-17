@@ -1,8 +1,8 @@
 Package: RMSS
 Type: Package
 Title: Robust Multi-Model Subset Selection
-Version: 1.1.2
-Date: 2024-12-19
+Version: 1.2.0
+Date: 2025-07-17
 Authors@R: c(person("Anthony", "Christidis", role=c("aut", "cre"), email = "anthony.christidis@stat.ubc.ca"),
              person("Gabriela", "Cohen-Freue", role=c("aut"), email = "gcohen@stat.ubc.ca"))
 Maintainer: Anthony Christidis <anthony.christidis@stat.ubc.ca>
@@ -19,8 +19,8 @@ Suggests: testthat, mvnfast
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 7.2.3
 NeedsCompilation: yes
-Packaged: 2024-12-19 23:39:20 UTC; anthony
+Packaged: 2025-07-17 15:16:43 UTC; anthony
 Author: Anthony Christidis [aut, cre],
   Gabriela Cohen-Freue [aut]
 Repository: CRAN
-Date/Publication: 2024-12-20 00:30:02 UTC
+Date/Publication: 2025-07-17 15:40:13 UTC
